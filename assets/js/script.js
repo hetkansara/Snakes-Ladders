@@ -1,3 +1,4 @@
+// Create a board
 let boardData = []
 let start = 100;
 for(let i=1;i<=10;i++) {
@@ -15,6 +16,7 @@ for(let i=1;i<=10;i++) {
   start -= 10;
 }
 
+// Board Rules
 let boards = [
   {
     boardURL: 'assets/images/board1.jpg',
@@ -75,6 +77,7 @@ let boards = [
   }
 ];
 
+// Players Object
 let players = [
   {
     id: 'Player 1',
@@ -101,6 +104,7 @@ new Vue({
   },
   methods: {
     rollDice: function (player) {
+      // Switch the player
       let nextPlayer;
       if(player.id == 'Player 1') {
         players[0].disabledDice = true;
@@ -110,11 +114,16 @@ new Vue({
         nextPlayer = players[0];
       }
 
+      // Roll the dice
       player.diceNum =  getRandomInt(7);
       if(player.diceNum == 6) {
+        // If number is 6, Again, tahe the turn!
         nextPlayer = player;
       }
+
+       
       if(player.diceNum + player.currentNum <= 100) {
+        // player steps
         this.disabledDice = true;
         for(let i=0; i<player.diceNum; i++) {
           setTimeout(()=>{
@@ -144,6 +153,7 @@ new Vue({
       }
     },
     switchBoard: function (index) {
+      // change the board
       let confirmed = confirm('Are you sure you want to switch the board? All progress will be lost!');
       if(confirmed) {
         this.selectedBoard = boards[index];
