@@ -9,6 +9,6 @@ script.js contains the logic for the game
   - `switchBoard()` called when user try to swith the board
 
 ### REFERENCES
-  1. Vuejs Practicals: [Github - christinebittle](https://github.com/christinebittle/vuepractice)
+  1. Vuejs Practicals: [Github - vuepractice by christinebittle](https://github.com/christinebittle/vuepractice)
   2. Board Images: [How to fix - Snakes & Ladders boards](https://www.howtofixx.com/snakes-and-ladders-template/)
   
